@@ -1,6 +1,6 @@
-1.create 2 instance
+1.create 2 instance - instance.1 & instance.2
 2.stop the instance.2
-3.delete instance.2 pem key
+3.delete instance.2 .pem key
 4.go to EBS volume, select instance.2 volume, click on Action > detach volume.2
 5.select the instance-2 volume again and click on action > attach volume
 6.Copy public ip of instance.1 and then paste in mobaxterm
