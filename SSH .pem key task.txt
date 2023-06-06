@@ -1,0 +1,23 @@
+1.create 2 instance
+2.stop the instance.2
+3.delete instance.2 pem key
+4.go to EBS volume, select instance.2 volume, click on Action > detach volume.2
+5.select the instance-2 volume again and click on action > attach volume
+6.Copy public ip of instance.1 and then paste in mobaxterm
+7.open mobaxterm > session > ssh-paste public ip in remote host,specify user 
+  click > advance ssh setting  add instance.1 .pem key 
+8.type lsblk,you will see xvdf partition .
+9.make directory name /var/dir11
+10.type mount -o nouuid /dev/xvdf1 var/dir11 
+11.check partition by using lsblk cmd 
+12.type cat /home/ec2-user/.ssh/authorized_keys >> /var/dir11/home/ec2-user/.ssh/authorized_key
+13.umount the mount dir (umount /var/dir11/)
+14.check by using lsblk cmd 
+14.go to volume in instance
+15.select volume of instance.2 > action > detach volume > then again go to action > attach volume 
+16.now select the instance.2 - device -/dev/xvda  
+15.Goto instance > start the instance
+16.copy public ip
+16.start mobaxterm > session > paste public ip
+   specify user name(ec2-user), Advance ssh setting - copy instance.1 .pem file
+17.Now you can logged in if you lost .pem key.
